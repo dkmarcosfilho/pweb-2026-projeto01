@@ -1,21 +1,28 @@
 {% extends "nossosite/base.html" %}
 {% load static %}
-
 {% block title %}Elenco &mdash; Seleção Brasileira{% endblock %}
-
 {% block nav_elenco %}ativo{% endblock %}
-
 {% block content %}
-
   <section class="secao">
     <h2 class="secao-titulo">
       O <span>Elenco</span>
     </h2>
     <div class="divisor"></div>
-
     <div class="grid-jogadores">
       {% for jogador in jogadores %}
       <div class="card-jogador">
+
+        <div class="card-imagem">
+          {% if jogador.foto %}
+            <img src="{% static 'img/jogadores/' %}{{ jogador.foto }}"
+                 alt="Foto de {{ jogador.nome }}">
+          {% else %}
+            <div class="card-imagem-placeholder">
+              <span>{{ jogador.numero }}</span>
+            </div>
+          {% endif %}
+        </div>
+
         <div class="card-numero">{{ jogador.numero }}</div>
         <div class="card-posicao">{{ jogador.posicao }}</div>
         <h3>{{ jogador.nome }}</h3>
@@ -24,11 +31,11 @@
           <span>📍 <b>{{ jogador.cidade }}</b></span>
           <span>🏟️ <b>{{ jogador.clube }}</b></span>
         </div>
+
       </div>
       {% empty %}
       <p style="color:rgba(248,248,240,.5);">Nenhum jogador cadastrado.</p>
       {% endfor %}
     </div>
   </section>
-
 {% endblock %}
