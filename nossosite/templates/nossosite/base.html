@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Seleção Brasileira{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+  <nav>
+    <a href="{% url 'index' %}" class="nav-logo">
+      <span class="escudo">🇧🇷</span>
+      <span>
+        Seleção Brasileira
+        <small>CBF &mdash; Futebol</small>
+      </span>
+    </a>
+    <ul>
+      <li><a href="{% url 'index' %}"    class="{% block nav_inicio %}{% endblock %}">Início</a></li>
+      <li><a href="{% url 'elenco' %}"   class="{% block nav_elenco %}{% endblock %}">Elenco</a></li>
+      <li><a href="{% url 'sobre' %}"    class="{% block nav_sobre  %}{% endblock %}">Sobre</a></li>
+    </ul>
+  </nav>
+
+  {% block content %}{% endblock %}
+
+  <footer>
+    <div class="footer-logo">Seleção Brasileira</div>
+    <div class="cores">
+      <span style="background:#009c3b;"></span>
+      <span style="background:#ffdf00;"></span>
+      <span style="background:#002776;"></span>
+      <span style="background:#f8f8f0;"></span>
+    </div>
+    <p>&copy; 2025 &mdash; Site criado para fins acadêmicos &mdash; Programação de Aplicação Web</p>
+  </footer>
+
+</body>
+</html>

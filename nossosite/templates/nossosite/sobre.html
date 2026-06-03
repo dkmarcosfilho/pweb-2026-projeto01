@@ -1,11 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Sobre</h1>
-</body>
-</html>
+{% extends "nossosite/base.html" %}
+{% load static %}
+
+{% block title %}Sobre &mdash; Seleção Brasileira{% endblock %}
+
+{% block nav_sobre %}ativo{% endblock %}
+
+{% block content %}
+
+  <section class="secao">
+    <h2 class="secao-titulo">
+      Sobre o <span>Site</span>
+    </h2>
+    <div class="divisor"></div>
+
+    <div class="sobre-grid">
+
+      <!-- Coluna esquerda: sobre o site -->
+      <div class="sobre-texto">
+        <p>{{ info_site.descricao }}</p>
+        <p>
+          Este site foi desenvolvido como projeto da disciplina
+          <strong style="color:var(--amarelo);">{{ info_site.disciplina }}</strong>,
+          ministrada pelo professor <strong style="color:var(--amarelo);">{{ info_site.professor }}</strong>.
+          O objetivo foi aplicar na prática os conceitos de templates Django, herança de
+          templates e passagem de contexto via views.
+        </p>
+        <p>
+          Todas as informações dos jogadores são armazenadas em dicionários nas views e
+          renderizadas dinamicamente pelos templates, demonstrando a separação entre lógica
+          e apresentação proposta pelo framework.
+        </p>
+
+        <div style="margin-top:2rem;">
+          <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:2px;color:var(--branco);margin-bottom:1rem;">
+            Tecnologias utilizadas
+          </h3>
+          <div class="tag-lista">
+            {% for tech in info_site.tecnologias %}
+            <span class="tag">{{ tech }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna direita: autores -->
+      <div>
+        <div class="sobre-box">
+          <h3>👨‍💻 Autores</h3>
+          {% for autor in autores %}
+          <div class="autor">
+            <div class="autor-avatar">{{ autor.nome|slice:":1" }}</div>
+            <div class="autor-info">
+              <h4>{{ autor.nome }}</h4>
+              <p>Matrícula: {{ autor.matricula }}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div style="
+          background:var(--cinza-medio);
+          border-left:4px solid var(--verde);
+          padding:1.5rem;
+          margin-top:1.5rem;
+        ">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px;color:var(--verde);margin-bottom:.5rem;">
+            Instituição
+          </div>
+          <p style="font-size:.9rem;color:rgba(248,248,240,.7);line-height:1.6;">
+            {{ info_site.instituicao }}<br>
+            Curso: {{ info_site.curso }}<br>
+            Período: {{ info_site.periodo }}<br>
+            Ano letivo: {{ info_site.ano }}
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+{% endblock %}
