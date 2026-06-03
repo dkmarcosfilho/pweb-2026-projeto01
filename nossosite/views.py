@@ -19,17 +19,17 @@ def index(request):
 
 def elenco(request):
     jogadores = [
-        {"numero": 1,  "nome": "Alisson Becker",     "posicao": "Goleiro",     "idade": 31, "cidade": "Novo Hamburgo-RS",   "clube": "Liverpool"},
-        {"numero": 2,  "nome": "Wesley",             "posicao": "Lateral D.",  "idade": 20, "cidade": "Brasil",             "clube": "Flamengo"},
-        {"numero": 6,  "nome": "Alex Sandro",        "posicao": "Lateral E.",  "idade": 32, "cidade": "Catanduva-SP",       "clube": "Juventus"},
-        {"numero": 3,  "nome": "Bremer",             "posicao": "Zagueiro",    "idade": 27, "cidade": "Itapitanga-BA",      "clube": "Juventus"},
-        {"numero": 4,  "nome": "Léo Pereira",        "posicao": "Zagueiro",    "idade": 28, "cidade": "Curitiba-PR",        "clube": "Flamengo"},
-        {"numero": 5,  "nome": "Casemiro",           "posicao": "Volante",     "idade": 31, "cidade": "São José dos Campos","clube": "Man. United"},
-        {"numero": 8,  "nome": "Bruno Guimarães",    "posicao": "Meia",        "idade": 26, "cidade": "Rio de Janeiro-RJ",  "clube": "Newcastle"},
-        {"numero": 21, "nome": "Matheus Cunha",      "posicao": "Meia",        "idade": 25, "cidade": "João Pessoa-PB",     "clube": "Wolves"},
-        {"numero": 19, "nome": "Luiz Henrique",      "posicao": "Atacante",    "idade": 23, "cidade": "Petrópolis-RJ",      "clube": "Botafogo"},
-        {"numero": 11, "nome": "Raphinha",           "posicao": "Ponta D.",    "idade": 26, "cidade": "Porto Alegre-RS",    "clube": "Barcelona"},
-        {"numero": 20, "nome": "Vinicius Jr.",       "posicao": "Ponta E.",    "idade": 23, "cidade": "São Gonçalo-RJ",     "clube": "Real Madrid"},
+        {"numero": 1,  "nome": "Alisson Becker",  "posicao": "Goleiro",    "idade": 31, "cidade": "Novo Hamburgo-RS",    "clube": "Liverpool",   "foto": "alisson.jpg"},
+        {"numero": 2,  "nome": "Wesley",           "posicao": "Lateral D.", "idade": 20, "cidade": "Brasil",              "clube": "Roma",    "foto": "wesley.jpg"},
+        {"numero": 6,  "nome": "Alex Sandro",      "posicao": "Lateral E.", "idade": 32, "cidade": "Catanduva-SP",        "clube": "Flamengo",    "foto": "alexsandro.jpg"},
+        {"numero": 3,  "nome": "Bremer",           "posicao": "Zagueiro",   "idade": 27, "cidade": "Itapitanga-BA",       "clube": "Flamengo",    "foto": "bremer.jpg"},
+        {"numero": 4,  "nome": "Léo Pereira",      "posicao": "Zagueiro",   "idade": 28, "cidade": "Curitiba-PR",         "clube": "Flamengo",    "foto": "leopereira.jpg"},
+        {"numero": 5,  "nome": "Casemiro",         "posicao": "Volante",    "idade": 31, "cidade": "São José dos Campos", "clube": "Man. United", "foto": "casemiro.jpg"},
+        {"numero": 8,  "nome": "Bruno Guimarães",  "posicao": "Meia",       "idade": 26, "cidade": "Rio de Janeiro-RJ",   "clube": "Newcastle",   "foto": "bruno.jpg"},
+        {"numero": 21, "nome": "Matheus Cunha",    "posicao": "Meia",       "idade": 25, "cidade": "João Pessoa-PB",      "clube": "Man. United",      "foto": "matheuscunha.jpg"},
+        {"numero": 19, "nome": "Luiz Henrique",    "posicao": "Atacante",   "idade": 23, "cidade": "Petrópolis-RJ",       "clube": "Zenit",    "foto": "luizhenrique.jpg"},
+        {"numero": 11, "nome": "Raphinha",         "posicao": "Ponta D.",   "idade": 26, "cidade": "Porto Alegre-RS",     "clube": "Barcelona",   "foto": "raphinha.jpg"},
+        {"numero": 20, "nome": "Vinicius Jr.",     "posicao": "Ponta E.",   "idade": 23, "cidade": "São Gonçalo-RJ",      "clube": "Real Madrid", "foto": "vini.jpg"},
     ]
     context = {"jogadores": jogadores}
     return render(request, "nossosite/elenco.html", context)

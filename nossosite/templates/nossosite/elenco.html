@@ -12,16 +12,10 @@
       {% for jogador in jogadores %}
       <div class="card-jogador">
 
-        <div class="card-imagem">
-          {% if jogador.foto %}
-            <img src="{% static 'img/jogadores/' %}{{ jogador.foto }}"
-                 alt="Foto de {{ jogador.nome }}">
-          {% else %}
-            <div class="card-imagem-placeholder">
-              <span>{{ jogador.numero }}</span>
-            </div>
-          {% endif %}
-        </div>
+       <div class="card-imagem">
+        <img src="{% static 'img/jogadores/' %}{{ jogador.foto }}"
+          alt="Foto de {{ jogador.nome }}">
+       </div>
 
         <div class="card-numero">{{ jogador.numero }}</div>
         <div class="card-posicao">{{ jogador.posicao }}</div>
